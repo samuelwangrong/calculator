@@ -10,7 +10,11 @@ export default function RootLayout() {
   const [screenVal, setScreenVal] = useState("");
 
   const handleOperator = (operator: string) => {
-    if (operator !== currentOperator && activeOperator == false) {
+    if (
+      screenVal !== "" &&
+      operator !== currentOperator &&
+      activeOperator == false
+    ) {
       setCurrentOperator(operator);
       setScreenVal(operator);
       setActiveOperator(true);
@@ -268,11 +272,3 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
-
-/**
- * CALCULATOR FUNCTIONALITY
- *if previous number doesn't exist, operator key should ignore it,
- *
- * after equal how handle the logic?
- *    if after equal, store the previous and add to a second operator is fine
- */
